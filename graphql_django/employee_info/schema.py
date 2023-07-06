@@ -1,5 +1,5 @@
 import graphene
-
+from employee_info.models import Person as db_Person
 class Person(graphene.ObjectType):
     email = graphene.String(required=True)
     name = graphene.String(required=True)
@@ -12,14 +12,15 @@ class Address(graphene.ObjectType):
     state = graphene.Field('employee_info.schema.StateEnum')
 
 class StateEnum(graphene.Enum):
-    STATE_ALPHA = "State Alpha"
-    STATE_BETA = "State Beta"
+    STATE_A = 'State A'
+    STATE_B = 'State B'
+    STATE_C = 'State C'
 
 class Query(graphene.ObjectType):
     people = graphene.List(Person, page=graphene.Int(), limit=graphene.Int())
 
     def resolve_people(self, info, page=None, limit=None):
-        pass
+        return db_Person.objects.all().select_related('address')
 
 
 schema = graphene.Schema(query=Query)
