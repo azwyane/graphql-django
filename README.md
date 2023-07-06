@@ -1,9 +1,7 @@
 # graphql-django
 
-```
-# Django GraphQL Service
 
-This project is a Django-based GraphQL service that exposes a GraphQL endpoint for retrieving a list of people with pagination. The service is designed using a schema-first approach and follows best practices for Django web development.
+This is a Django-based GraphQL service that exposes a GraphQL endpoint for retrieving a list of people with pagination. The service is designed using a schema-first approach and follows best practices for Django web development.
 
 ## Features
 
