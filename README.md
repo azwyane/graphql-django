@@ -61,16 +61,19 @@ This is a Django-based GraphQL service that exposes a GraphQL endpoint for retri
 1. Build the Docker image:
 
    ```bash
-   docker-compose build
+   docker compose build
    ```
 
 2. Start the Docker container:
 
    ```bash
-   docker-compose up
+   docker compose up
    ```
 
    The GraphQL endpoint will be available at `http://localhost:8000/graphql`.
+
+> Note: seed data is included in docker compose, so every time `docker compose up`
+> is executed the migrations applies and again seeding occurs.
 
 ### Running Tests
 
@@ -78,4 +81,40 @@ To run the unit test for the GraphQL endpoint, use the following command:
 
 ```bash
 python manage.py test
+```
+
+### Running Query
+
+To run the query you can use following samples:
+
+```bash
+query {
+  people {
+    email
+    name
+    address {
+      number
+      street
+      city
+      state
+    }
+  }
+}
+```
+
+for pagination, use the following
+
+```bash
+query {
+  people(page:1, limit:2) {
+    email
+    name
+    address {
+      number
+      street
+      city
+      state
+    }
+  }
+}
 ```

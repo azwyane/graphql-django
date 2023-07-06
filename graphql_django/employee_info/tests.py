@@ -4,7 +4,24 @@ from employee_info.schema import schema
 
 
 class PeopleTestCase(TestCase):
+    """
+    Test case for the people GraphQL query.
+
+    Attributes:
+        client (Client): The GraphQL client.
+        query (str): The GraphQL query to be executed.
+        response (dict): The response received from the GraphQL server.
+        data (dict): The data extracted from the response.
+
+    """
     def setUp(self):
+        """
+        Set up the test case.
+
+        This method initializes the GraphQL client, defines the GraphQL query,
+        executes the query, and extracts the response data.
+
+        """
         self.client = Client(schema)
         self.query = '''
             query {
