@@ -27,7 +27,7 @@ class Address(graphene.ObjectType):
     number = graphene.Int(required=True)
     street = graphene.String(required=True)
     city = graphene.String(required=True)
-    state = graphene.Field('employee_info.schema.StateEnum')
+    state = graphene.Field('employee_info.schema.StateEnum',required=True)
 
 class StateEnum(graphene.Enum):
     """
