@@ -43,8 +43,11 @@ This is a Django-based GraphQL service that exposes a GraphQL endpoint for retri
 4. Load sample data:
 
    ```bash
-   python manage.py loaddata sample_data.json
+   python manage.py loaddata sample
    ```
+> Note: This step can be skipped if you want to add your own data.
+> For that run `createsuperuser` to first create admin to login django admin
+> then create own sample data using `Person` and `Address` table.
 
 5. Run the development server:
 
