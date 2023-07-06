@@ -1,0 +1,97 @@
+[
+    {
+      "model": "employee_info.address",
+      "pk": 1,
+      "fields": {
+        "number": 1,
+        "street": "234-455",
+        "city": "Sydney",
+        "state": "STATE_A"
+      }
+    },
+    {
+      "model": "employee_info.address",
+      "pk": 2,
+      "fields": {
+        "number": 2,
+        "street": "111-1123",
+        "city": "Melbourne",
+        "state": "STATE_B"
+      }
+    },
+    {
+      "model": "employee_info.address",
+      "pk": 3,
+      "fields": {
+        "number": 34,
+        "street": "DUFF",
+        "city": "Adelaide",
+        "state": "STATE_C"
+      }
+    },
+    {
+      "model": "employee_info.address",
+      "pk": 4,
+      "fields": {
+        "number": 44,
+        "street": "88-77",
+        "city": "Brisbane",
+        "state": "STATE_C"
+      }
+    },
+    {
+      "model": "employee_info.address",
+      "pk": 5,
+      "fields": {
+        "number": 33,
+        "street": "22-29",
+        "city": "Pokhara",
+        "state": "STATE_A"
+      }
+    },
+    {
+      "model": "employee_info.person",
+      "pk": 1,
+      "fields": {
+        "email": "mail@shrawanbaral.com.np",
+        "name": "Shrawan Baral",
+        "address": 1
+      }
+    },
+    {
+      "model": "employee_info.person",
+      "pk": 2,
+      "fields": {
+        "email": "jhdfhsv@sgsg.com",
+        "name": "test",
+        "address": 2
+      }
+    },
+    {
+      "model": "employee_info.person",
+      "pk": 3,
+      "fields": {
+        "email": "jhvhvv@fsgg.com",
+        "name": "Sbdjbfsjbf sg",
+        "address": 3
+      }
+    },
+    {
+      "model": "employee_info.person",
+      "pk": 4,
+      "fields": {
+        "email": "testing@gugg.com",
+        "name": "testing",
+        "address": 4
+      }
+    },
+    {
+      "model": "employee_info.person",
+      "pk": 5,
+      "fields": {
+        "email": "azwayne@fsgsg.com",
+        "name": "azwyane",
+        "address": 5
+      }
+    }
+  ]
