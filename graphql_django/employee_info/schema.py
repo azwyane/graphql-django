@@ -26,7 +26,7 @@ class Query(graphene.ObjectType):
         page = page or 1
         limit = limit or 10
 
-        persons = db_Person.objects.all().select_related('address')
+        persons = db_Person.objects.order_by('id').all().select_related('address')
         
         # Create a Paginator object with the desired limit
         paginator = Paginator(persons, limit)
