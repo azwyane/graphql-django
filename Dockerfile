@@ -22,10 +22,10 @@ COPY graphql_django/ .
 EXPOSE 8000
 
 # Run the command to migrate database
-CMD ["python","manage.py", "migrate"]
+RUN python manage.py migrate
 
 # Run the command to load fixtures
-CMD ["python","manage.py", "loaddata", "sample"]
+RUN python manage.py loaddata sample
 
 # Run the command to start Django Server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
