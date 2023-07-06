@@ -1,6 +1,6 @@
 from django.db import models
 from enum import Enum
-
+from django.core.paginator import Paginator
 class StateEnum(Enum):
     """
     Enumeration of possible states.
@@ -47,3 +47,18 @@ class Person(models.Model):
 
     def __str__(self):
         return f"{self.name} : {self.email}"
+
+    @classmethod
+    def get_page(cls,page:int,limit:int):
+        persons = cls.objects.order_by('id').all().select_related('address')
+        
+        # Create a Paginator object with the desired limit
+        paginator = Paginator(persons, limit)
+
+        # Validate the requested page number
+        total_pages = paginator.num_pages
+        if page < 1 or page > total_pages:
+            raise ValueError("Invalid page number")
+
+        requested_page = paginator.page(page)
+        return requested_page

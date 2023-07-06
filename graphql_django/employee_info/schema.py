@@ -1,6 +1,5 @@
 import graphene
 from employee_info.models import Person as db_Person
-from django.core.paginator import Paginator
 
 class Person(graphene.ObjectType):
     """
@@ -51,17 +50,7 @@ class Query(graphene.ObjectType):
         page = page or 1
         limit = limit or 10
 
-        persons = db_Person.objects.order_by('id').all().select_related('address')
-        
-        # Create a Paginator object with the desired limit
-        paginator = Paginator(persons, limit)
-
-        # Validate the requested page number
-        total_pages = paginator.num_pages
-        if page < 1 or page > total_pages:
-            raise ValueError("Invalid page number")
-
-        requested_page = paginator.page(page)
+        requested_page = db_Person.get_page(page, limit)
         return requested_page
 
 
